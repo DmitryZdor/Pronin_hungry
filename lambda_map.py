@@ -2,9 +2,11 @@ def lambda_map(lst):
     """Функция принимает список элементов (состоящий из строк и цифр),
     возвращает новый список, с условием - если элемент списка был строкой, в начало строки нужно добавить текст "abc_",
     в конец строки - "_cba". Если элемент был int - то его значение нужно возвести в квадрат."""
-    print(*map(lambda it: it * it if isinstance(it, int) else it[::-1], lst))
+    txt = 'abc_'
+
+    print(*map(lambda x: x * x if isinstance(x, int) else txt + x + txt[::-1], lst))
     # или через list
-    print(list(map(lambda it: it * it if isinstance(it, int) else it[::-1], lst)))
+    print(list(map(lambda x: x * x if isinstance(x, int) else txt + x + txt[::-1], lst)))
 
 
 # тестовые данные
