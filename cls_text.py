@@ -11,8 +11,8 @@ class TextFunctions:
     def longest_word(self):
         """выводит самое длинное слово, при уcловии что оно одно,
         если несколько то первое, можно вывести список всех."""
-
-        self.only_words = re.sub(r'[.,"\'-?:!;]', '', self.text)
+        self.symbols = '.,"\'-?:!;$()'
+        self.only_words = re.sub(r'[{}]'.format(self.symbols), '', self.text)
 
         print([word for word in self.only_words.split()
                if len(word) == max(map(lambda x: len(x), self.only_words.split()))][0])
@@ -33,13 +33,14 @@ class TextFunctions:
 
 # тестовые данные
 
-data = 'Написаться Ссасс, принимающий: на входаааааааааааа ПотОп... Один метод, метод,  должен выводить.. "в", метод- самое длинное слово в'
+data = 'Написаться Ссасс, принимающий: на входаааааааааааа ПотОп... (Один метод), метод,  должен выводить.. "в", метод- самое$ длинное слово в'
 
 a = TextFunctions(text=data)
 a.longest_word()
 a.all_palindromes()
 a.symbols_quantity()
 a.often_word()
+print(a.only_words)
 
 print(TextFunctions.longest_word.__doc__)
 print(TextFunctions.often_word.__doc__)
