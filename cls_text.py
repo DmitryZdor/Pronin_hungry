@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 
+
 class TextFunctions:
 
     def __init__(self, text: str):
@@ -17,7 +18,6 @@ class TextFunctions:
     def often_word(self):
         """выводит самое часто встречающееся слово"""
         return sorted(Counter(self.only_words.lower().split()).items(), key=lambda x: x[1], reverse=True)[0][0]
-
 
     def all_palindromes(self):
         """выводит все палиндромы через запятую."""

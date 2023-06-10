@@ -22,6 +22,7 @@ async def get_aiohttp(url):
         async with session.get(url) as response:
             await response.read()
 
+
 async def client_blacksheep(url):
     async with ClientSession() as client:
         await client.get(url)

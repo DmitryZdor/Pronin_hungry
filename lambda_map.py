@@ -5,13 +5,3 @@ def lambda_map(lst):
     txt = 'abc_'
 
     return list(map(lambda x: x * x if isinstance(x, int) else txt + x + txt[::-1], lst))
-
-
-
-# тестовые данные
-if __name__ == '__main__':
-
-    data = ['Функция', 44, 658, 'принимает', 54, 'список', 'элементов', '(состоящий из строк и цифр),', 'возвращает', 4,
-            'новый список,', 34578, '23345656']
-
-    print(list(lambda_map(data)))

@@ -26,10 +26,6 @@ def for_all_methods(decorator):
     return decorate
 
 
-
-
 @for_all_methods(time_func)
 class TextFuncDecor(TextFunctions):
     pass
-
-

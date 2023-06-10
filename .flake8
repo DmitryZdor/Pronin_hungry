@@ -1,0 +1,5 @@
+[flake8]
+exclude=venv
+
+ignore = E128, F401
+max-line-length = 120

@@ -6,17 +6,3 @@ def git_link(links):
         return res
     else:
         return 'Нет данных'
-# можно было не в одну строку, но так мне больше понравилось
-
-# тестовые данные
-if __name__ == '__main__':
-
-
-    print(git_link(['https://github.com/miguelgrinberg/Flask-SocketIO', 'https://github.com/miguelgrinberg/Flask-SocketIO.git',
-             'https://github.com/DmitryZdor/news_for_test', 'https://gothub/DmitryZdor/news_for_test']))
-
-    print(git_link([]))
-
-    print(git_link(['f']))
-
-    git_link(['https://github.com/DmitryZdor/news_for_test'])
