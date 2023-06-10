@@ -2,7 +2,10 @@ from git_link import git_link
 from  lambda_map import lambda_map
 from strange_dict import strange_dict
 from cls_text import TextFunctions
-from time_func import TextFuncDecor, time_func
+from time_func import TextFuncDecor
+from requests_100 import client_blacksheep, report_time, URL, TIMES
+import asyncio
+
 
 
 functions = {'git_link': [['https://github.com/miguelgrinberg/Flask-SocketIO',
@@ -47,3 +50,11 @@ if __name__ == '__main__':
     b = TextFuncDecor(text=data)
     for attr in list_of_methods:
         print(f'Результат функции: {getattr(b, attr).__name__}  -  {getattr(b, attr)()}')
+
+    print('------Функция, которая замеряет время на исполнение 100 запросов к адресу  http://httpbin.org/delay/3  '
+          '------------------------------------------------')
+
+    loop = asyncio.get_event_loop()
+    with report_time("blacksheet"):
+        loop.run_until_complete(
+            asyncio.gather(*[client_blacksheep(URL) for i in range(TIMES)]))
