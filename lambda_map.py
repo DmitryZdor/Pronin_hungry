@@ -4,14 +4,14 @@ def lambda_map(lst):
     в конец строки - "_cba". Если элемент был int - то его значение нужно возвести в квадрат."""
     txt = 'abc_'
 
-    print(*map(lambda x: x * x if isinstance(x, int) else txt + x + txt[::-1], lst))
-    # или через list
-    print(list(map(lambda x: x * x if isinstance(x, int) else txt + x + txt[::-1], lst)))
+    return list(map(lambda x: x * x if isinstance(x, int) else txt + x + txt[::-1], lst))
+
 
 
 # тестовые данные
+if __name__ == '__main__':
 
-data = ['Функция', 44, 658, 'принимает', 54, 'список', 'элементов', '(состоящий из строк и цифр),', 'возвращает', 4,
-        'новый список,', 34578, '23345656']
+    data = ['Функция', 44, 658, 'принимает', 54, 'список', 'элементов', '(состоящий из строк и цифр),', 'возвращает', 4,
+            'новый список,', 34578, '23345656']
 
-lambda_map(data)
+    print(list(lambda_map(data)))
