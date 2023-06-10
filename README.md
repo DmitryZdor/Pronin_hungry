@@ -1,5 +1,10 @@
 ## Голодные игры от Пронина ##
 
+### Часть 1
+
+https://docs.google.com/document/d/1sRngJnE6u0L0422NAmiif63_2tv0haAH/edit?usp=sharing&ouid=106556994657469778825&rtpof=true&sd=true
+
+
 ### Часть 2
 #### Чтобы запустить проект нeoбходимо
 
