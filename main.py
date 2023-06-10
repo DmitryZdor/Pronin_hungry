@@ -55,6 +55,6 @@ if __name__ == '__main__':
           '------------------------------------------------')
 
     loop = asyncio.get_event_loop()
-    with report_time("blacksheet"):
+    with report_time("blacksheep"):
         loop.run_until_complete(
             asyncio.gather(*[client_blacksheep(URL) for i in range(TIMES)]))
